@@ -1,0 +1,44 @@
+---
+layout: default
+title: Zach Perret
+---
+
+<header>
+  <div id='headerWrapper'>
+    <div class='headerLogo'>Z</div>
+    <div class='headerDesc'> My name is Zach Perret. I work at <a href='http://plaid.io'> Plaid</a> and live in San Francisco. Find out more <a href='/about.html'>about</a> me or follow me on <a href='http://twitter.com/zachperret'>twitter</a>.</div>
+  </div>
+</header>
+
+<!-- This loops through the paginated posts -->
+{% for post in paginator.posts %}
+
+  <div id='postHeaderHolder'>
+    <div id='postHeader'>
+      <a class='postName' href='{{post.url}}'> {{ post.title }}
+      </a>  
+      <div class="postDate">{{ post.date | date_to_string }}</div>
+    </div>
+  </div>
+
+
+  <div id="post">
+    {{ post.tag}}
+  </div>
+
+{% endfor %}
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    {% if paginator.previous_page == 1 %}
+      <a href="/" class="previous">Previous</a>
+    {% else %}
+      <a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
+    {% endif %}
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a href="/page{{ paginator.next_page }}" class="next">Next</a>
+  {% endif %}
+</div>

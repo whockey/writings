@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<header class="body-header">
+  <div class="header-container">
+  	<div class="wrap">
+  		<div class = "creator">
+  			<span class="title">
+  				{{ page.title }}
+  			</span>
+  			<span class="author">
+  				was written by {{ page.author }}
+  			</span>
+  		</div>
+  		<div class = "tech">
+  			The font is 
+  			<span class="font">
+  				{{ page.font }}, 
+  			</span>
+  			and was written in 
+  			<span class="date">
+  				{{ page.display_date}}
+  			</span>
+  		</div>
+  	</div>
+  </div>
+</header>
+<nav class="nav">
+  <a href='/'>
+    <div class="circle-button-container" id="circle-button-full" onmouseover="circleTrigger()" onmouseout="clearTiming()">
+        <div class="circle-button-trigger" id="circle-button">
+        </div>
+    </div>
+  </a>
+</nav>
+<section class="section">
+  <article class="article">
+    <header class="article-header">
+      {{ page.title }}
+    </header>
+    <div class="article-body">
+      {{ content }}
+    </div>
+    <footer class="article-footer">
+      Footer!
+    </footer>
+  </article>
+</section>
+<footer class="body-footer">
+  this is a cool footer
+</footer>
